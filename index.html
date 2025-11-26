@@ -1,273 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfólio de Gabriel</title>
-    <style>
-        /* BASE E RESET */
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-        }
-
-        /* AJUSTE ESSENCIAL PARA NAV-FIXA: Garante que o conteúdo não fique sob a barra */
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: auto;
-            /* CRUCIAL: Adiciona margem ou padding superior para o scroll */
-            padding-top: 100px; 
-            /* CRUCIAL: Adiciona espaço para que o scroll pare corretamente abaixo do nav */
-            scroll-margin-top: 80px; 
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #111;
-        }
-        
-        /* BARRA SUPERIOR FIXA */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #111;
-            color: white;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 15px 0;
-            z-index: 999;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 5px 10px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #00aaff;
-        }
-
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 300px;
-            background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-            font-size: 2.7rem;
-            font-weight: bold;
-        }
-        
-        /* TRABALHOS (GRID) */
-        .grid {
-            display: grid;
-            /* Garante 4 colunas em telas grandes */
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 20px;
-        }
-
-        .grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s;
-        }
-
-        .grid img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-        }
-        
-        /* SOBRE */
-        #sobre {
-            background: #fff;
-        }
-
-        .sobre {
-            background: #fefefe;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        /* CONTATO (INCLUINDO FORMULÁRIO) */
-        .contato-box {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
-        }
-        
-        /* Estilos do Formulário */
-        .contato-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        .contato-form input[type="text"],
-        .contato-form input[type="email"],
-        .contato-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-        
-        .contato-form textarea {
-            resize: vertical;
-        }
-        
-        .contato-form button {
-            background: #00aaff;
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-            width: 100%;
-        }
-        
-        .contato-form button:hover {
-            background: #007bb5;
-        }
-        
-        /* Links de Redes Sociais */
-        .links {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .links a {
-            display: inline-block;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            color: #0066cc;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .links a:hover {
-            color: #003d80;
-        }
-
-        /* MEDIA QUERIES (Responsividade) */
-        @media (max-width: 1000px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: 1fr; /* 1 coluna em celulares */
-            }
-            nav {
-                gap: 20px;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Design | [Seu Nome]</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
 
-    <nav>
-        <a href="#trabalhos">Trabalhos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contatos</a>
-    </nav>
+    <header class="fixed-header">
+        <nav>
+            <ul>
+                <li><a href="#intro">Início</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="banner">Meu Portfólio</div>
+    <main>
+        <section id="intro" class="intro-section">
+            <div class="intro-content">
+                <div class="profile-photo-container">
+                    <img src="sua-foto.jpg" alt="Foto de Perfil de [Seu Nome]" class="profile-photo">
+                </div>
 
-    <section id="trabalhos">
-        <h2>Trabalhos Recentes</h2>
-        <div class="grid">
-            <img src="./1.png" alt="Trabalho 1" />
-            <img src="./2.png" alt="Trabalho 2" />
-            <img src="./3.png" alt="Trabalho 3" />
-            <img src="./4.png" alt="Trabalho 4" />
-            <img src="./5.png" alt="Trabalho 5" />
-            <img src="./6.png" alt="Trabalho 6" />
-            <img src="./7.png" alt="Trabalho 7" />
-            <img src="./1.png" alt="Trabalho 1" />
-            <img src="./2.png" alt="Trabalho 2" />
-            <img src="./3.png" alt="Trabalho 3" />
-            <img src="./4.png" alt="Trabalho 4" />
-            <img src="./5.png" alt="Trabalho 5" />
-        </div>
-    </section>
-
-    ---
-
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <div class="sobre">
-            <p>
-                Olá! Sou **Gabriel**, desenvolvedor apaixonado por tecnologia, design e soluções criativas.
-                Gosto de transformar ideias em projetos reais e funcionais. Minha experiência abrange
-                [mencione 2-3 áreas, ex: Desenvolvimento Front-end, UX/UI Design e API REST]. 
-            </p>
-            <p>
-                Estou sempre buscando aprender novas tecnologias para entregar o melhor valor aos projetos.
-            </p>
-        </div>
-    </section>
-
-    ---
-
-    <section id="contato">
-        <h2>Entre em Contato</h2>
-        <div class="contato-box">
-            
-            <form action="SEU_ENDPOINT_DE_FORMULARIO" method="POST" class="contato-form">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <h1>Olá! Sou Gabriel Castellano</h1>
+                <p class="description">
+                    Sou um Designer apaixonado por transformar ideias complexas em artes digitais. 
+                    Especializado em Adobe Photoshop e Illustrator, meu trabalho abrange desde manipulação fotográfica e criação de conceitos até ilustrações vetoriais detalhadas. 
+                    Neste portfólio, você encontrará uma amostra dos meus projetos mais criativos e tecnicamente desafiadores.
+                </p>
                 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                
-                <button type="submit">Enviar Mensagem</button>
-            </form>
-
-            <div class="links">
-                <p>Ou me encontre nas redes sociais:</p>
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">GitHub</a>
+                <div class="social-links">
+                    <a href="[Link do Instagram]" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="[Link do LinkedIn]" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="[Link do GitHub/Behance/Dribbble]" target="_blank" title="GitHub/Outro"><i class="fab fa-github"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <h2>Galeria de Criações (Photoshop & Illustrator)</h2>
+
+            <div class="portfolio-grid">
+                <div class="grid-item"><img src="1.png" alt="Design 1"></div>
+                <div class="grid-item"><img src="2.png" alt="Design 2"></div>
+                <div class="grid-item"><img src="3.png" alt="Design 3"></div>
+                <div class="grid-item"><img src="4.png" alt="Design 4"></div>
+                
+                <div class="grid-item"><img src="5.png" alt="Design 5"></div>
+                <div class="grid-item"><img src="6.png" alt="Design 6"></div>
+                <div class="grid-item"><img src="7.png" alt="Design 7"></div>
+                <div class="grid-item"><img src="8.png" alt="Design 8"></div>
+                
+                <div class="grid-item"><img src="9.png" alt="Design 9"></div>
+                <div class="grid-item"><img src=10.png" alt="Design 10"></div>
+                <div class="grid-item"><img src=11.png" alt="Design 11"></div>
+                <div class="grid-item"><img src=12.png" alt="Design 12"></div>
+            </div>
+            </section>
+
+        <section id="contato" class="contato-section">
+            <h2 id="contato-heading">Entre em Contato</h2>
+            <p>Se você tem um projeto em mente ou gostaria de discutir uma oportunidade, envie uma mensagem!</p>
+            <form action="#" method="POST" class="contato-form">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu E-mail" required>
+                <textarea placeholder="Mensagem Detalhada" rows="6" required></textarea>
+                <button type="submit">Enviar Proposta</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gabriel Castellano. </p>
+    </footer>
 
 </body>
-
 </html>
